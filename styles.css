@@ -5,6 +5,12 @@
     font-family: "Inter", sans-serif;
 } /* padrão de todos doc css: zera margem e não deixa a borda estourar o tamanho */
 
+/* Trava a largura máxima para não vazar tela no celular */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     min-height: 100vh;
     /* Fundo Azul Noite Profundo (adeus preto 100% chapado que ofuscava tudo) */
@@ -13,7 +19,7 @@ body {
     background-image: 
         radial-gradient(650px circle at var(--mouse-x, 50%) var(--mouse-y, 25%), rgba(0, 119, 255, 0.12) 0%, transparent 70%),
         linear-gradient(180deg, #0d1527 0%, #0b101b 60%, #080c15 100%);
-    background-attachment: fixed; /* trava o fundo no lugar enquanto rola a página */
+    background-repeat: no-repeat;
     color: #e2e8f0;
     padding: 30px 20px 120px;
     display: flex;
@@ -91,15 +97,15 @@ body {
     filter: drop-shadow(0 0 10px rgba(0, 119, 255, 0.4));
 }
 
-/* Subtítulo */
+/* Subtítulo estilo Xiaomi (super circular) */
 .destaque {
+    font-family: 'Comfortaa', 'Quicksand', sans-serif;
     color: #f1f5f9;
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 24px;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.5px;
 }
-
 
 textarea.caixa-texto {
     resize: none;
@@ -168,6 +174,7 @@ button.botao-transcreva:active {
     width: 100%;
     max-width: 640px;
     min-height: 80px;
+    word-break: break-word;
 }
 
 /* === SEÇÃO SOBRE / EXPLICAÇÃO === */
@@ -216,9 +223,9 @@ button.botao-transcreva:active {
     }
 }
 
-/* ===================================================
+/* =========================================
    aquelas degracinha de animação mt foda
-=================================================== */
+========================================= */
 
 @keyframes surgirSuave {
     0% {
